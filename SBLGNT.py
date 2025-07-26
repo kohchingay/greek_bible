@@ -85,7 +85,7 @@ df = pd.DataFrame(
     }
 )
 
-st.dataframe(df.style.format("{:.2}"))
+st.dataframe(df)
 
 import altair as alt
 
