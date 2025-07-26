@@ -8,6 +8,9 @@ import streamlit as st
 import numpy as np
 import plotly
 import plotly.express as px
+from plotly.offline import iplot, init_notebook_mode
+import plotly.graph_objects as go
+init_notebook_mode(connected = True)
 
 sblgnt = open("SBLGNT.txt")
 nt_text = sblgnt.read()
