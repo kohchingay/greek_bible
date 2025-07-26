@@ -95,7 +95,8 @@ fig = px.pie(
     hole=0.5,
     title=f"Distribution of '{word}'"
 )
-st.plotly_chart(fig, use_container_width=True)
+
+fig.show()
 
 
 # In[ ]:
