@@ -91,7 +91,7 @@ st.dataframe(rounded_df)
 
 import altair as alt
 
-st.title("Donut Chart Example with Altair and Streamlit")
+st.title("Donut Chart")
 
 # Prepare your data
 source = pd.DataFrame({
