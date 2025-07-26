@@ -85,7 +85,7 @@ df = pd.DataFrame(
     }
 )
 
-rounded_df = df.round(decimals=0)
+rounded_df = df.round()
 st.dataframe(rounded_df)
 
 
