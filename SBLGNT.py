@@ -94,20 +94,24 @@ import altair as alt
 st.title("Word Count")
 
 # Prepare your data
-chart_data = pd.DataFrame({
+source = pd.DataFrame({
     "Book": ["Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation"],
     "Percentage": [{100*wordcount_Mt/wordcount_nt}, {100*wordcount_Mk/wordcount_nt}, {100*wordcount_Lk/wordcount_nt}, {100*wordcount_Jn/wordcount_nt}, {100*wordcount_Ac/wordcount_nt}, {100*wordcount_Ro/wordcount_nt}, {100*wordcount_1Co/wordcount_nt}, {100*wordcount_2Co/wordcount_nt}, {100*wordcount_Ga/wordcount_nt}, {100*wordcount_Eph/wordcount_nt}, {100*wordcount_Php/wordcount_nt}, {100*wordcount_Col/wordcount_nt}, {100*wordcount_1Th/wordcount_nt}, {100*wordcount_2Th/wordcount_nt}, {100*wordcount_1Ti/wordcount_nt}, {100*wordcount_2Ti/wordcount_nt}, {100*wordcount_Tit/wordcount_nt}, {100*wordcount_Phm/wordcount_nt}, {100*wordcount_Heb/wordcount_nt}, {100*wordcount_Jas/wordcount_nt}, {100*wordcount_1Pe/wordcount_nt}, {100*wordcount_2Pe/wordcount_nt}, {100*wordcount_1Jn/wordcount_nt}, {100*wordcount_2Jn/wordcount_nt}, {100*wordcount_3Jn/wordcount_nt}, {100*wordcount_Jud/wordcount_nt}, {100*wordcount_Re/wordcount_nt}]
 })
 
 # Create the Altair donut chart
 
-d = (
-    alt.Chart(chart_data)
-    .mark_circle()
-    .encode(x="Book", y="Percentage", tooltip=["Book", "Percentage"])
+chart = alt.Chart(source).mark_arc(innerRadius=70).encode(
+    theta=alt.Theta(field="Percentage", type="quantitative"),
+    color=alt.Color(field="Book", type="nominal", title="Category"),
+    order=alt.Order(field="Percentage", sort="descending") # Optional: order arcs by value
+).properties(
+    title="Word Count"
 )
 
-st.altair_chart(d)
+# Display the chart in Streamlit
+st.title("Streamlit Donut Chart with Altair")
+st.altair_chart(chart, use_container_width=True)
 
 # In[ ]:
 
