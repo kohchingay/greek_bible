@@ -99,7 +99,7 @@ source = pd.DataFrame({
 
 # Create the Altair donut chart
 
-chart = alt.Chart(source).mark_arc(innerRadius=70).encode(
+c = alt.Chart(source).mark_arc(innerRadius=70).encode(
     theta=alt.Theta(field="Percentage", type="quantitative"),
     color=alt.Color(field="Book", type="nominal", title="Book"),
     order=alt.Order(field="Percentage", sort="descending") # Optional: order arcs by value
@@ -109,7 +109,7 @@ chart = alt.Chart(source).mark_arc(innerRadius=70).encode(
 
 # Display the chart in Streamlit
 st.title("Streamlit Donut Chart with Altair")
-st.altair_chart(chart)
+st.altair_chart(c)
 
 # In[ ]:
 
