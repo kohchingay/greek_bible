@@ -7,6 +7,7 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
+import plotly.express as px
 
 sblgnt = open("SBLGNT.txt")
 nt_text = sblgnt.read()
@@ -90,7 +91,7 @@ st.dataframe(rounded_df)
 fig = px.pie(
     rounded_df["Word Count"], 
     values="Word Count", 
-    names="CSV File", 
+    names="Book", 
     hole=0.5,
     title=f"Distribution of '{word}'"
 )
