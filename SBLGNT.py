@@ -15,6 +15,7 @@ st.markdown('[https://gntreader.com/?b=MT&c=1&v=1](https://gntreader.com/?b=MT&c
 
 word = st.text_input("Copy the word you would like to count from the Greek text (which should be in lower case), \npaste it here and hit the 'Enter' button: \n\n")
 
+wordcount = 0
 wordcount = text.count(word)
 
 st.write(f"Number of times {word} appears in the NT is {wordcount}.")
