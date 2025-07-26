@@ -91,7 +91,7 @@ st.dataframe(rounded_df)
 
 import altair as alt
 
-st.title("Donut Chart")
+st.title("Word Count")
 
 # Prepare your data
 chart_data = pd.DataFrame({
