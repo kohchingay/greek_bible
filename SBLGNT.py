@@ -83,7 +83,7 @@ df = pd.DataFrame(
     "Percentage": [{100*wordcount_Mt/wordcount_nt}, {100*wordcount_Mk/wordcount_nt}, {100*wordcount_Lk/wordcount_nt}, {100*wordcount_Jn/wordcount_nt}, {100*wordcount_Ac/wordcount_nt}, {100*wordcount_Ro/wordcount_nt}, {100*wordcount_1Co/wordcount_nt}, {100*wordcount_2Co/wordcount_nt}, {100*wordcount_Ga/wordcount_nt}, {100*wordcount_Eph/wordcount_nt}, {100*wordcount_Php/wordcount_nt}, {100*wordcount_Col/wordcount_nt}, {100*wordcount_1Th/wordcount_nt}, {100*wordcount_2Th/wordcount_nt}, {100*wordcount_1Ti/wordcount_nt}, {100*wordcount_2Ti/wordcount_nt}, {100*wordcount_Tit/wordcount_nt}, {100*wordcount_Phm/wordcount_nt}, {100*wordcount_Heb/wordcount_nt}, {100*wordcount_Jas/wordcount_nt}, {100*wordcount_1Pe/wordcount_nt}, {100*wordcount_2Pe/wordcount_nt}, {100*wordcount_1Jn/wordcount_nt}, {100*wordcount_2Jn/wordcount_nt}, {100*wordcount_3Jn/wordcount_nt}, {100*wordcount_Jud/wordcount_nt}, {100*wordcount_Re/wordcount_nt}]
     }
 )
-rounded_df = df.round(1)
+rounded_df = df.round(decimals=0)
 st.dataframe(rounded_df)
   
 # In[ ]:
