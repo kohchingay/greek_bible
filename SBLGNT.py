@@ -6,6 +6,7 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
+import plotly
 import plotly.express as px
 
 sblgnt = open("SBLGNT.txt")
