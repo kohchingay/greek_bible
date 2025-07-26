@@ -27,7 +27,7 @@ df = pd.DataFrame(
     
     }
 )
-St.table(df)
+st.table(df)
   
 # In[ ]:
 
