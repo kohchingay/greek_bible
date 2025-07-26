@@ -85,13 +85,7 @@ df = pd.DataFrame(
     }
 )
 
-# Identify numeric columns
-numeric_cols = df.select_dtypes(include=np.number).columns
-
-# Round numeric columns and convert to int
-df[numeric_cols] = df[numeric_cols].round().astype(int)
-
-st.dataframe(df)
+st.dataframe(df.style.format("{:.2%}"))
 
 import altair as alt
 
