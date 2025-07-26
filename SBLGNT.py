@@ -104,7 +104,7 @@ c = alt.Chart(source).mark_arc(innerRadius=70).encode(
     color=alt.Color(field="Book", type="nominal", title="Book"),
     order=alt.Order(field="Percentage", sort="descending") # Optional: order arcs by value
 ).properties(
-    title="Word Count"
+    title="Word Count of {word}"
 )
 
 # Display the chart in Streamlit
