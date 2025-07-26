@@ -20,6 +20,7 @@ wordcount = text.count(word)
 st.write(f"Number of times {word} appears in the NT is {wordcount}.")
 
 
+
 # In[ ]:
 
 
