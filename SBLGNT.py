@@ -6,6 +6,7 @@
 
 import pandas as pd
 import streamlit as st
+import numpy as np
 
 f = open("SBLGNT.txt")
 text = f.read()
@@ -17,10 +18,15 @@ word_nt = st.text_input("Copy the word you would like to count from the Greek te
 
 wordcount_nt = text.count(word_nt)
 
-st.write(f"Number of times {word_nt} appears in the NT is {wordcount_nt}.")
+st.write(f"Number of times {word_nt} appears in the NT is {wordcount_nt}.\n\n")
 
 
+df = pd.DataFrame(
+    "Book": ["Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation"],
 
+
+St.table(df)
+  
 # In[ ]:
 
 
