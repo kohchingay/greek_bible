@@ -15,7 +15,7 @@ nt_text = sblgnt.read()
 st.write("This website refers to the SBL Greek New Testament text available online at sites such as") 
 st.markdown('[https://gntreader.com/?b=MT&c=1&v=1](https://gntreader.com/?b=MT&c=1&v=1)')
 
-word = st.text_input("Copy the word you would like to count from the Greek text (which should be in lower case), \n\npaste it here and hit the 'Enter' button:\n\n")
+word = st.text_input("Copy the word you would like to count from the Greek text (which should be in lower case), \n\npaste it here and hit the 'Enter' button:\n\n\n\n")
 
 wordcount_nt = nt_text.count(word)
 
