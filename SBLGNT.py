@@ -3,7 +3,6 @@
 
 # In[18]:
 
-pip install plotly
 import pandas as pd
 import streamlit as st
 import numpy as np
