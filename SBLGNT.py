@@ -101,17 +101,11 @@ source = pd.DataFrame({
 })
 
 # Create the Altair donut chart
-chart = alt.Chart(source).mark_arc(innerRadius=80).encode(
-    theta=alt.Theta(field="Book", type="quantitative"),
-    color=alt.Color(field="Word Count", type="nominal", title="Word Count"),
-    order=alt.Order(field="Percentage", sort="descending"), # Optional: sort segments by value
-    tooltip=["category", "value"]
-).properties(
-    title="Word Distribution"
-)
 
-# Display the chart in Streamlit
-st.altair_chart(chart, use_container_width=True)
+alt.Chart(source).mark_arc(innerRadius=50).encode(
+    theta="value",
+    color="category:N",
+)
 
 # In[ ]:
 
