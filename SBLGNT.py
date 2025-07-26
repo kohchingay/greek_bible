@@ -84,7 +84,7 @@ df = pd.DataFrame(
     }
 )
 rounded_df = df.round(0)
-st.table(rounded_df)
+st.dataframe(rounded_df)
   
 # In[ ]:
 
