@@ -6,11 +6,8 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-import plotly
-import plotly.express as px
-from plotly.offline import iplot, init_notebook_mode
-import plotly.graph_objects as go
-init_notebook_mode(connected = True)
+
+
 
 sblgnt = open("SBLGNT.txt")
 nt_text = sblgnt.read()
@@ -91,15 +88,30 @@ df = pd.DataFrame(
 rounded_df = df.round(decimals=0)
 st.dataframe(rounded_df)
 
-fig = px.pie(
-    rounded_df["Word Count"], 
-    values="Word Count", 
-    names="Book", 
-    hole=0.5,
-    title=f"Distribution of '{word}'"
+
+import altair as alt
+
+st.title("Donut Chart Example with Altair and Streamlit")
+
+# Prepare your data
+source = pd.DataFrame({
+    "Book": ["Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation"],
+    "Word Count": [{wordcount_Mt}, {wordcount_Mk}, {wordcount_Lk}, {wordcount_Jn}, {wordcount_Ac}, {wordcount_Ro}, {wordcount_1Co}, {wordcount_2Co}, {wordcount_Ga}, {wordcount_Eph}, {wordcount_Php}, {wordcount_Col}, {wordcount_1Th}, {wordcount_2Th}, {wordcount_1Ti}, {wordcount_2Ti}, {wordcount_Tit}, {wordcount_Phm}, {wordcount_Heb}, {wordcount_Jas}, {wordcount_1Pe}, {wordcount_2Pe}, {wordcount_1Jn}, {wordcount_2Jn}, {wordcount_3Jn}, {wordcount_Jud}, {wordcount_Re}],
+    "Percentage": [{100*wordcount_Mt/wordcount_nt}, {100*wordcount_Mk/wordcount_nt}, {100*wordcount_Lk/wordcount_nt}, {100*wordcount_Jn/wordcount_nt}, {100*wordcount_Ac/wordcount_nt}, {100*wordcount_Ro/wordcount_nt}, {100*wordcount_1Co/wordcount_nt}, {100*wordcount_2Co/wordcount_nt}, {100*wordcount_Ga/wordcount_nt}, {100*wordcount_Eph/wordcount_nt}, {100*wordcount_Php/wordcount_nt}, {100*wordcount_Col/wordcount_nt}, {100*wordcount_1Th/wordcount_nt}, {100*wordcount_2Th/wordcount_nt}, {100*wordcount_1Ti/wordcount_nt}, {100*wordcount_2Ti/wordcount_nt}, {100*wordcount_Tit/wordcount_nt}, {100*wordcount_Phm/wordcount_nt}, {100*wordcount_Heb/wordcount_nt}, {100*wordcount_Jas/wordcount_nt}, {100*wordcount_1Pe/wordcount_nt}, {100*wordcount_2Pe/wordcount_nt}, {100*wordcount_1Jn/wordcount_nt}, {100*wordcount_2Jn/wordcount_nt}, {100*wordcount_3Jn/wordcount_nt}, {100*wordcount_Jud/wordcount_nt}, {100*wordcount_Re/wordcount_nt}]
+})
+
+# Create the Altair donut chart
+chart = alt.Chart(source).mark_arc(innerRadius=80).encode(
+    theta=alt.Theta(field="Book", type="quantitative"),
+    color=alt.Color(field="Word Count", type="nominal", title="Word Count"),
+    order=alt.Order(field="Percentage", sort="descending"), # Optional: sort segments by value
+    tooltip=["category", "value"]
+).properties(
+    title="Word Distribution"
 )
 
-st.plotly_chart(fig)
+# Display the chart in Streamlit
+st.altair_chart(chart, use_container_width=True)
 
 # In[ ]:
 
