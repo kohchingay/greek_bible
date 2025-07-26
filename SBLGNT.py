@@ -87,6 +87,16 @@ df = pd.DataFrame(
 rounded_df = df.round(decimals=0)
 st.dataframe(rounded_df)
 
+fig = px.pie(
+    rounded_df["Word Count"], 
+    values="Word Count", 
+    names="CSV File", 
+    hole=0.5,
+    title=f"Distribution of '{word}'"
+)
+st.plotly_chart(fig, use_container_width=True)
+
+
 # In[ ]:
 
 
