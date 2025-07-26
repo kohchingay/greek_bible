@@ -94,17 +94,20 @@ import altair as alt
 st.title("Donut Chart")
 
 # Prepare your data
-source = pd.DataFrame({
+chart_data = pd.DataFrame({
     "Book": ["Matthew", "Mark", "Luke", "John", "Acts", "Romans", "1 Corinthians", "2 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "1 Thessalonians", "2 Thessalonians", "1 Timothy", "2 Timothy", "Titus", "Philemon", "Hebrews", "James", "1 Peter", "2 Peter", "1 John", "2 John", "3 John", "Jude", "Revelation"],
     "Percentage": [{100*wordcount_Mt/wordcount_nt}, {100*wordcount_Mk/wordcount_nt}, {100*wordcount_Lk/wordcount_nt}, {100*wordcount_Jn/wordcount_nt}, {100*wordcount_Ac/wordcount_nt}, {100*wordcount_Ro/wordcount_nt}, {100*wordcount_1Co/wordcount_nt}, {100*wordcount_2Co/wordcount_nt}, {100*wordcount_Ga/wordcount_nt}, {100*wordcount_Eph/wordcount_nt}, {100*wordcount_Php/wordcount_nt}, {100*wordcount_Col/wordcount_nt}, {100*wordcount_1Th/wordcount_nt}, {100*wordcount_2Th/wordcount_nt}, {100*wordcount_1Ti/wordcount_nt}, {100*wordcount_2Ti/wordcount_nt}, {100*wordcount_Tit/wordcount_nt}, {100*wordcount_Phm/wordcount_nt}, {100*wordcount_Heb/wordcount_nt}, {100*wordcount_Jas/wordcount_nt}, {100*wordcount_1Pe/wordcount_nt}, {100*wordcount_2Pe/wordcount_nt}, {100*wordcount_1Jn/wordcount_nt}, {100*wordcount_2Jn/wordcount_nt}, {100*wordcount_3Jn/wordcount_nt}, {100*wordcount_Jud/wordcount_nt}, {100*wordcount_Re/wordcount_nt}]
 })
 
 # Create the Altair donut chart
 
-alt.Chart(source).mark_arc(innerRadius=50).encode(
-    theta="Percentage",
-    color="Book:N",
+c = (
+    alt.Chart(chart_data)
+    .mark_circle()
+    .encode(x="Book", y="Percentage", tooltip=["Book", "Percentage"])
 )
+
+st.altair_chart(c)
 
 # In[ ]:
 
