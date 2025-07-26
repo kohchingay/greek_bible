@@ -101,7 +101,7 @@ source = pd.DataFrame({
 
 chart = alt.Chart(source).mark_arc(innerRadius=70).encode(
     theta=alt.Theta(field="Percentage", type="quantitative"),
-    color=alt.Color(field="Book", type="nominal", title="Category"),
+    color=alt.Color(field="Book", type="nominal", title="Book"),
     order=alt.Order(field="Percentage", sort="descending") # Optional: order arcs by value
 ).properties(
     title="Word Count"
