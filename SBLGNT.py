@@ -85,7 +85,7 @@ df = pd.DataFrame(
 )
 rounded_df = df.round(decimals=0)
 st.dataframe(rounded_df)
-  
+st.dataframe(df.style.format("{:.0}"))
 # In[ ]:
 
 
