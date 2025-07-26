@@ -104,11 +104,11 @@ c = alt.Chart(source).mark_arc(innerRadius=70).encode(
     color=alt.Color(field="Book", type="nominal", title="Book"),
     order=alt.Order(field="Percentage", sort="descending") # Optional: order arcs by value
 ).properties(
-    title="{word}"
+    title="word"
 )
 
 # Display the chart in Streamlit
-st.write(f"{word}")
+st.title(f"{word}")
 st.altair_chart(c)
 
 # In[ ]:
