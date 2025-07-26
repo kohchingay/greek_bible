@@ -102,8 +102,8 @@ source = pd.DataFrame({
 # Create the Altair donut chart
 
 alt.Chart(source).mark_arc(innerRadius=50).encode(
-    theta="value",
-    color="category:N",
+    theta="Percentage",
+    color="Book:N",
 )
 
 # In[ ]:
