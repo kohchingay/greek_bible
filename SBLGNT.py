@@ -84,7 +84,7 @@ df = pd.DataFrame(
     }
 )
 
-st.dataframe(df.style.format("{:.0}"))
+st.dataframe(df.style.format("{:.0f}"))
 
 
 # In[ ]:
