@@ -101,13 +101,13 @@ chart_data = pd.DataFrame({
 
 # Create the Altair donut chart
 
-c = (
+d = (
     alt.Chart(chart_data)
     .mark_circle()
     .encode(x="Book", y="Percentage", tooltip=["Book", "Percentage"])
 )
 
-st.altair_chart(c)
+st.altair_chart(d)
 
 # In[ ]:
 
