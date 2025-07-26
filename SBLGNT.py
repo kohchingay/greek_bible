@@ -85,7 +85,8 @@ df = pd.DataFrame(
     }
 )
 
-st.dataframe(df.style.format(subset=['Book', 'Percentage']), formatter="{:.2f}")
+formatted_df = df.style.format({"Percentage": "{:.2f}".format})
+st.write(formatted_df)
 
 import altair as alt
 
