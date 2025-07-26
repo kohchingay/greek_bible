@@ -18,7 +18,7 @@ word = st.text_input("Copy the word you would like to count from the Greek text 
 
 wordcount_nt = textnt.count(word)
 
-st.write(f"Number of times {word_nt} appears in the NT is {wordcount_nt}.\n\n")
+st.write(f"Number of times {word} appears in the NT is {wordcount_nt}.\n\n")
 
 mat = open("1-Mt.txt")
 luke = open("3-Lk.txt")
