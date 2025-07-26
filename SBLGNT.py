@@ -105,7 +105,7 @@ c = alt.Chart(source).mark_arc(innerRadius=70).encode(
     order=alt.Order(field="Percentage", sort="descending") # Optional: order arcs by value
 ).properties(
     title="Word Count of", {word}
-)
+
 
 # Display the chart in Streamlit
 st.title("Streamlit Donut Chart with Altair")
