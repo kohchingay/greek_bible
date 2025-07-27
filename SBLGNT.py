@@ -84,7 +84,7 @@ df = pd.DataFrame(
     }
 )
 
-if word:
+if if st.button('Display Table'):
     st.dataframe(df, column_config={"Percentage": {"alignment": "center"}}
     )
 
