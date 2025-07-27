@@ -84,8 +84,9 @@ df = pd.DataFrame(
     }
 )
 
-st.dataframe(df, column_config={"Percentage": {"alignment": "center"}}
-)
+if word:
+    st.dataframe(df, column_config={"Percentage": {"alignment": "center"}}
+    )
 
 import altair as alt
 
