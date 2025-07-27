@@ -85,9 +85,7 @@ df = pd.DataFrame(
     }
 )
 
-numeric_cols = df.select_dtypes(include=np.number).columns
-df[numeric_cols] = df[numeric_cols].round(0).astype(int)
-st.dataframe(df)
+st.dataframe(df.style.format("{:.0f}"))
 
 import altair as alt
 
