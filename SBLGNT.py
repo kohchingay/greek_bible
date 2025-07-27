@@ -17,8 +17,7 @@ word = st.text_input("Copy the word you would like to count from the Greek text 
 
 wordcount_nt = nt_text.count(word)
 
-if {word} != {}:
-    st.write(f"Number of times {word} appears in the NT is {wordcount_nt}.\n\n")
+st.write(f"Number of times {word} appears in the NT is {wordcount_nt}.\n\n")
 
 Mt = open("1-Mt.txt").read()
 Mk = open("2-Mk.txt").read()
