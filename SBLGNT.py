@@ -108,12 +108,12 @@ c = alt.Chart(source).mark_arc(innerRadius=70).encode(
 col1, col2 = st.columns(2)
 
 with col1:
-    if st.button('Display Table'):
+    if word:
         st.dataframe(df, column_config={"Percentage": {"alignment": "center"}}
     )
 
 with col2:
-    if st.button('Display Donut Chart'):
+    if word:
         st.title(f"{word}")
         st.altair_chart(c)
         
