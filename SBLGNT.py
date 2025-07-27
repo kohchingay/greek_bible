@@ -85,7 +85,8 @@ df = pd.DataFrame(
     }
 )
 
-st.dataframe(df.style.format("{:.0f}".center(30)))
+st.dataframe(df, column_config={"Percentage": {"alignment": "center"}}
+)
 
 import altair as alt
 
