@@ -7,19 +7,18 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 
-
-
 sblgnt = open("SBLGNT.txt")
 nt_text = sblgnt.read()
 
 st.write("This website refers to the SBL Greek New Testament text available online at sites such as") 
 st.markdown('[https://gntreader.com/?b=MT&c=1&v=1](https://gntreader.com/?b=MT&c=1&v=1)')
 
-word = st.text_input("Copy the word you would like to count from the Greek text (which should be in lower case), \n\npaste it here and hit the 'Enter' button:\n\n\n\n")
+word = st.text_input("Copy the word you would like to count from the Greek text (mostly in lower case), \n\npaste it here and hit the 'Enter' button:\n\n\n\n")
 
 wordcount_nt = nt_text.count(word)
 
-st.write(f"Number of times {word} appears in the NT is {wordcount_nt}.\n\n")
+if word != {}:
+    st.write(f"Number of times {word} appears in the NT is {wordcount_nt}.\n\n")
 
 Mt = open("1-Mt.txt").read()
 Mk = open("2-Mk.txt").read()
