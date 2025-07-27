@@ -84,7 +84,7 @@ df = pd.DataFrame(
     "Percentage": [round(100*wordcount_Mt/wordcount_nt), round(100*wordcount_Mk/wordcount_nt), round(100*wordcount_Lk/wordcount_nt), round(100*wordcount_Jn/wordcount_nt), round(100*wordcount_Ac/wordcount_nt), round(100*wordcount_Ro/wordcount_nt), round(100*wordcount_1Co/wordcount_nt), round(100*wordcount_2Co/wordcount_nt), round(100*wordcount_Ga/wordcount_nt), round(100*wordcount_Eph/wordcount_nt), round(100*wordcount_Php/wordcount_nt), round(100*wordcount_Col/wordcount_nt), round(100*wordcount_1Th/wordcount_nt), round(100*wordcount_2Th/wordcount_nt), round(100*wordcount_1Ti/wordcount_nt), round(100*wordcount_2Ti/wordcount_nt), round(100*wordcount_Tit/wordcount_nt), round(100*wordcount_Phm/wordcount_nt), round(100*wordcount_Heb/wordcount_nt), round(100*wordcount_Jas/wordcount_nt), round(100*wordcount_1Pe/wordcount_nt), round(100*wordcount_2Pe/wordcount_nt), round(100*wordcount_1Jn/wordcount_nt), round(100*wordcount_2Jn/wordcount_nt), round(100*wordcount_3Jn/wordcount_nt), round(100*wordcount_Jud/wordcount_nt), round(100*wordcount_Re/wordcount_nt)]
     }
 )
-st.beta_set_page_config( layout='wide')
+
 st.dataframe(df)
 
 import altair as alt
