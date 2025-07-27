@@ -83,10 +83,7 @@ df = pd.DataFrame(
     "Percentage": [round(100*wordcount_Mt/wordcount_nt), round(100*wordcount_Mk/wordcount_nt), round(100*wordcount_Lk/wordcount_nt), round(100*wordcount_Jn/wordcount_nt), round(100*wordcount_Ac/wordcount_nt), round(100*wordcount_Ro/wordcount_nt), round(100*wordcount_1Co/wordcount_nt), round(100*wordcount_2Co/wordcount_nt), round(100*wordcount_Ga/wordcount_nt), round(100*wordcount_Eph/wordcount_nt), round(100*wordcount_Php/wordcount_nt), round(100*wordcount_Col/wordcount_nt), round(100*wordcount_1Th/wordcount_nt), round(100*wordcount_2Th/wordcount_nt), round(100*wordcount_1Ti/wordcount_nt), round(100*wordcount_2Ti/wordcount_nt), round(100*wordcount_Tit/wordcount_nt), round(100*wordcount_Phm/wordcount_nt), round(100*wordcount_Heb/wordcount_nt), round(100*wordcount_Jas/wordcount_nt), round(100*wordcount_1Pe/wordcount_nt), round(100*wordcount_2Pe/wordcount_nt), round(100*wordcount_1Jn/wordcount_nt), round(100*wordcount_2Jn/wordcount_nt), round(100*wordcount_3Jn/wordcount_nt), round(100*wordcount_Jud/wordcount_nt), round(100*wordcount_Re/wordcount_nt)]
     }
 )
-
-if st.button('Display Table'):
-    st.dataframe(df, column_config={"Percentage": {"alignment": "center"}}
-    )
+    
 
 import altair as alt
 
@@ -108,9 +105,20 @@ c = alt.Chart(source).mark_arc(innerRadius=70).encode(
 
 # Display the chart in Streamlit
 if st.button('Display Donut Chart'):
-    st.title(f"{word}")
-    st.altair_chart(c)
+    
 
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button('Display Table'):
+        st.dataframe(df, column_config={"Percentage": {"alignment": "center"}}
+    )
+
+with col2:
+    if st.button('Display Donut Chart'):
+        st.title(f"{word}")
+        st.altair_chart(c)
+        
 # In[ ]:
 
 
