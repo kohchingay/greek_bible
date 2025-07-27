@@ -85,12 +85,7 @@ df = pd.DataFrame(
     }
 )
 
-st.dataframe(
-    df,
-    column_config={
-        "Percentage": st.column_config.NumberColumn(format="%.0f") # Displays as float with 0 decimal places
-    }
-)
+st.dataframe(df)
 
 import altair as alt
 
