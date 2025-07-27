@@ -107,7 +107,7 @@ c = alt.Chart(source).mark_arc(innerRadius=70).encode(
 )
 
 # Display the chart in Streamlit
-if st.button('Display Table'):
+if st.button('Display Donut Chart'):
     st.title(f"{word}")
     st.altair_chart(c)
 
